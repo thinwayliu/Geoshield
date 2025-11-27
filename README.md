@@ -8,23 +8,10 @@
 
 GeoShield is a privacy-preserving framework that generates imperceptible adversarial perturbations to protect image geolocation privacy against Vision-Language Models (VLMs). Our approach effectively disrupts geolocation predictions while maintaining visual quality and semantic content integrity.
 
-![Main Algorithm](image1.pdf)
+![Main Algorithm](./image1.pdf)
 
 ---
 
-### Highlights
-
-🎯 **Effective Privacy Protection**: Reduces VLM geolocation accuracy by up to 72.6% while maintaining visual quality (PSNR > 35 dB)
-
-🔄 **High Transferability**: Achieves 78.3% average attack success rate across 8 different black-box VLM architectures
-
-🧠 **Geo-Semantic Awareness**: Novel loss function that preserves non-geographical semantic content while disrupting location cues
-
-🎨 **Region-Aware Perturbations**: Leverages object detection to focus perturbations on geography-indicative regions
-
-⚡ **Easy to Use**: Hydra-based configuration with sensible defaults and extensive customization options
-
----
 
 ## Table of Contents
 
@@ -47,14 +34,14 @@ GeoShield is a privacy-preserving framework that generates imperceptible adversa
 - [Technical Details](#technical-details)
 - [Ethical Considerations & Research Use](#ethical-considerations--research-use)
 - [Acknowledgements](#acknowledgements)
-- [Citation](#citation)
-- [FAQ & Troubleshooting](#faq--troubleshooting)
+<!-- - [Citation](#citation) -->
+<!-- - [FAQ & Troubleshooting](#faq--troubleshooting) -->
 - [License](#license)
 - [Contact](#contact)
 
 ## Overview
 
-![Framework](image2.pdf)
+![Framework](./image2.pdf)
 > *Illustration of the GeoShield framework architecture.*
 
 GeoShield implements two complementary adversarial attack strategies for geolocation privacy protection:
@@ -472,7 +459,7 @@ This project builds upon and integrates the following excellent works:
 
 We thank the authors of these works for making their code and models publicly available, advancing open research in computer vision and multimodal learning.
 
-## Citation
+<!-- ## Citation
 
 If you find GeoShield useful for your research, please cite our paper:
 
@@ -484,60 +471,8 @@ If you find GeoShield useful for your research, please cite our paper:
   year={2026},
   note={To appear}
 }
-```
+``` -->
 
-**ArXiv preprint:** [https://arxiv.org/abs/XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) *(Update with actual link)*
-
-## FAQ & Troubleshooting
-
-<details>
-<summary><b>Q: What is the recommended epsilon value for different use cases?</b></summary>
-
-- **Maximum imperceptibility:** `epsilon=4` (PSNR ≈ 38-40 dB)
-- **Balanced performance:** `epsilon=8` (default, PSNR ≈ 35-37 dB)
-- **Maximum privacy:** `epsilon=16` (PSNR ≈ 30-33 dB, may be slightly visible)
-
-</details>
-
-<details>
-<summary><b>Q: How do I choose between GeoShield and M-Attack?</b></summary>
-
-- **GeoShield (untargeted):** Use when you simply want to hide the true location without specifying where VLMs should think it is. Faster and simpler.
-- **M-Attack (targeted):** Use when you want to mislead VLMs to predict a specific alternative location. Requires target location images.
-
-</details>
-
-<details>
-<summary><b>Q: Why are my adversarial images not transferring to target VLMs?</b></summary>
-
-Try these solutions:
-1. Enable ensemble mode with multiple backbones: `model.backbone=["B16","B32","L336","Laion"]`
-2. Increase optimization steps: `optim.steps=200`
-3. Enable data augmentation: `model.use_source_crop=true model.use_target_crop=true`
-4. Use region-aware perturbations with GroundingDINO
-
-</details>
-
-<details>
-<summary><b>Q: CUDA out of memory error?</b></summary>
-
-Solutions:
-1. Use fewer ensemble models: `model.backbone=["B16"]`
-2. Reduce image resolution: `model.input_res=512`
-3. Process images sequentially: `data.batch_size=1`
-4. Use a GPU with more VRAM or enable CPU mode: `model.device="cpu"` (slower)
-
-</details>
-
-<details>
-<summary><b>Q: Can I use GeoShield on videos?</b></summary>
-
-GeoShield is designed for static images. For videos:
-1. Extract frames using ffmpeg
-2. Apply GeoShield to each frame
-3. Reconstruct the video
-
-Note: This may introduce temporal inconsistencies. Frame-to-frame consistency is an open research direction.
 
 </details>
 
