@@ -455,10 +455,6 @@ This project is released under the MIT License. See [LICENSE](LICENSE) for detai
 
 ## Contact
 
-**For questions, issues, or collaborations:**
-
-- **GitHub Issues:** [Create an issue](https://github.com/your-username/GeoShield/issues)
-- **Email:** liuxinwei@iie.ac.cn
-- **Institution:** Institute of Information Engineering, Chinese Academy of Sciences
+**For questions, issues, or collaborations:** - **Email:** liuxinwei@iie.ac.cn
 
 We welcome contributions, bug reports, and feature requests!
