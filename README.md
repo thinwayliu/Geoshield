@@ -8,40 +8,13 @@
 
 GeoShield is a privacy-preserving framework that generates imperceptible adversarial perturbations to protect image geolocation privacy against Vision-Language Models (VLMs). Our approach effectively disrupts geolocation predictions while maintaining visual quality and semantic content integrity.
 
-![Main Algorithm](./image1.pdf)
+![Main Algorithm](./image1.png)
 
 ---
 
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Installation](#installation)
-  - [Prerequisites](#prerequisites)
-  - [Basic Setup](#basic-setup)
-  - [GroundingDINO Setup](#groundingdino-setup-optional---for-region-aware-attacks)
-- [Quick Start](#quick-start)
-  - [Data Preparation](#data-preparation)
-  - [GeoShield (Untargeted Attack)](#geoshield-untargeted-attack)
-  - [M-Attack (Targeted Attack)](#m-attack-targeted-attack)
-- [Configuration](#configuration)
-  - [Supported CLIP Backbones](#supported-clip-backbones)
-  - [VLM Integration](#vlm-integration-for-geo-semantic-loss)
-- [Project Structure](#project-structure)
-- [Usage Examples](#usage-examples)
-- [Results & Performance](#results--performance)
-- [Technical Details](#technical-details)
-- [Ethical Considerations & Research Use](#ethical-considerations--research-use)
-- [Acknowledgements](#acknowledgements)
-<!-- - [Citation](#citation) -->
-<!-- - [FAQ & Troubleshooting](#faq--troubleshooting) -->
-- [License](#license)
-- [Contact](#contact)
-
 ## Overview
 
-![Framework](./image2.pdf)
+![Framework](./image2.png)
 > *Illustration of the GeoShield framework architecture.*
 
 GeoShield implements two complementary adversarial attack strategies for geolocation privacy protection:
