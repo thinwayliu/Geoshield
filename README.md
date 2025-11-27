@@ -1,10 +1,15 @@
-# GeoShield
+# GeoShield 
 
 GeoShield is a research tool for generating adversarial perturbations that protect image geolocation privacy. It creates imperceptible perturbations that prevent Vision-Language Models (VLMs) from accurately predicting image geolocation while preserving semantic content.
+
+![Main Algorithm](image1.pdf)
 
 ## Overview
 
 GeoShield implements two complementary attack strategies:
+
+![Main Algorithm](image2.pdf)
+> *Illustration of our proposed framework.
 
 - **GeoShield**: An untargeted attack that disrupts geolocation prediction by introducing geo-semantic aware perturbations
 - **M-Attack**: A targeted attack that misleads models to predict specific incorrect locations
@@ -40,7 +45,7 @@ cd GeoShield
 pip install torch torchvision transformers hydra-core omegaconf wandb tqdm pillow numpy
 ```
 
-### GroundingDINO Setup (Optional)
+### GroundingDINO Setup (Geography Region Detection)
 
 For region-aware attacks using object detection, you need to set up GroundingDINO:
 
@@ -276,12 +281,6 @@ where `f(·)` represents the ensemble feature extractor.
 - L∞ norm constraint: `||δ||∞ ≤ ε`
 - Pixel value range: `[0, 255]`
 - Default ε = 8 (approximately 3% of pixel range)
-
-## Limitations
-
-- Perturbations are optimized for CLIP-based models and may not transfer perfectly to all VLMs
-- Computational cost scales with number of ensemble models and optimization steps
-- Requires paired source and target images for M-Attack
 
 ## Research Use Only
 
