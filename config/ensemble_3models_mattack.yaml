@@ -1,0 +1,31 @@
+# Configuration for M-Attack (targeted attack)
+
+defaults:
+  - _self_
+
+data:
+  batch_size: 1
+  num_samples: 100
+  output: "./output"
+  cle_data_path: "data/clean_images"
+  tgt_data_path: "data/target_images"
+
+optim:
+  alpha: 1.0
+  epsilon: 8
+  steps: 100
+
+model:
+  input_res: 640
+  use_source_crop: true
+  use_target_crop: true
+  crop_scale: [0.5, 0.9]
+  ensemble: true
+  device: "cuda:0"
+  backbone: ["B16", "B32", "Laion"]
+
+wandb:
+  project: "geoshield"
+  entity: ""
+
+attack: 'fgsm'
