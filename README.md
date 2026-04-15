@@ -48,7 +48,7 @@ GeoShield implements two complementary adversarial attack strategies for geoloca
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-username/GeoShield.git
+git clone https://github.com/thinwayliu/GeoShield.git
 cd GeoShield
 ```
 
